@@ -12,6 +12,7 @@ function sortArray(arr){
 sortArray(data);
 console.log(data);
 
+
 function total(arr){
   let ttl = 0;
   for(i=0; i < arr.length; i++){
@@ -22,6 +23,7 @@ function total(arr){
 
 let ttl = total(data)
 console.log(ttl)
+
 
 function isOddorEven(x){
   if(x % 2 === 1){
@@ -36,11 +38,13 @@ function isOddorEven(x){
 
 isOddorEven(ttl)
 
+
 let odd = []
 function extractOdd (arr) {
-  for(i=0; i < arr.length; i++){
-    if(i % 2 === 1){
-    odd.push(i)
+  for(let i=0; i < arr.length; i++){
+    const num = arr[i];
+    if(num % 2 === 1){
+    odd.push(num)
     }
     }
     console.log(odd)
@@ -51,9 +55,10 @@ extractOdd(data);
 
 let even = []
 function extractEven (arr) {
-  for(i=0; i < arr.length; i++){
-    if(i % 2 === 0){
-    even.push(i)
+  for(let i=0; i < arr.length; i++){
+    const num = arr[i];
+    if(num % 2 === 0){
+    even.push(num)
     }
     }
     console.log(even)
@@ -61,4 +66,27 @@ function extractEven (arr) {
 }
 
 extractEven(data);
-console.log(even)
+
+function getTheBiggest(arr1, arr2){
+  let sum1 = total(arr1);
+  let sum2 = total(arr2);
+  if (sum1 > sum2){
+    return arr1;
+  } else{
+    return arr2;
+  }
+}
+
+console.log(getTheBiggest(odd, even))
+
+function multiply(arr, callback){
+  for (let i = 0; i < arr.length; i++){
+  const num = arr[i];
+  arr[i] = callback(num)
+  }
+}
+
+let byfive = (x) => x * 5;
+
+multiply(data, byfive);
+console.log(data);
