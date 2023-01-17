@@ -4,3 +4,61 @@ let data = [
 ];
 
 console.log(data);
+
+function sortArray(arr){
+  arr.sort((a, b) => a - b);
+}
+
+sortArray(data);
+console.log(data);
+
+function total(arr){
+  let ttl = 0;
+  for(i=0; i < arr.length; i++){
+  ttl += arr[i]
+  }
+  return ttl
+}
+
+let ttl = total(data)
+console.log(ttl)
+
+function isOddorEven(x){
+  if(x % 2 === 1){
+    console.log("Array is odd");
+    return false;
+  }
+  else{
+    console.log("Array is even")
+    return true;
+  }
+}
+
+isOddorEven(ttl)
+
+let odd = []
+function extractOdd (arr) {
+  for(i=0; i < arr.length; i++){
+    if(i % 2 === 1){
+    odd.push(i)
+    }
+    }
+    console.log(odd)
+    return odd;
+}
+
+extractOdd(data);
+
+let even = []
+function extractEven (arr) {
+  for(i=0; i < arr.length; i++){
+    if(i % 2 === 0){
+    even.push(i)
+    }
+    }
+    console.log(even)
+    return even;
+}
+
+extractEven(data);
+console.log(even)
